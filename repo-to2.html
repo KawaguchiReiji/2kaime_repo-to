@@ -28,7 +28,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(2, 2, 6);
+        camera.position.set(0, 0, 6);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -130,7 +130,7 @@
 
         const sprite4 = new THREE.Sprite(material4);
         sprite4.position.x = 0;
-        sprite4.position.y = 4;
+        sprite4.position.y = 3;
         sprite4.position.z = -7;
         sprite4.scale.set(8,8,8);
         scene.add(sprite4);
