@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>repo-to1</title>
+
+  <!-- three.jsを読み込む(ローカル) -->
+  <!-- <script src="./three.js"></script> -->
+  <!-- three.jsを読み込む(CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+
+</head>
+<body>
+ <script>
+  var init = function() {
+
+    var width = 800,
+        height = 600;
+  
+    // レンダラーを作成
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(width, height);
+    document.body.appendChild(renderer.domElement);
+  
+    // シーンを作成
+    var scene = new THREE.Scene();
+  
+    // カメラを作成
+    var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+
+
+//正二十面体
+var icosahedronGeometry = new THREE.IcosahedronGeometry(3, 0); 
+var icosahedronMaterial = new THREE. MeshPhongMaterial( { color: 0x800080 ,wireframe: true} );
+var icosahedron = new THREE.Mesh( icosahedronGeometry, icosahedronMaterial );
+icosahedron.position.set( 0, 0, -30);
+scene.add( icosahedron );
+
+var icosahedronGeometry2 = new THREE.IcosahedronGeometry(3, 0); 
+var icosahedronMaterial2 = new THREE. MeshPhongMaterial( { color: 0x800080,wireframe: true} );
+var icosahedron2 = new THREE.Mesh( icosahedronGeometry2, icosahedronMaterial2 );
+icosahedron2.position.set( 0, 0, -30);
+scene.add( icosahedron2 );
+    
+var icosahedronGeometry2 = new THREE.IcosahedronGeometry(3, 0); 
+var icosahedronMaterial3 = new THREE. MeshPhongMaterial( { color: 0xffffff,wireframe: true} );
+var icosahedron3 = new THREE.Mesh( icosahedronGeometry2, icosahedronMaterial3 );
+icosahedron3.position.set( 0, 0, -30);
+scene.add( icosahedron3 );
+
+//球
+var sphereGeometry = new THREE.SphereGeometry( 2.5, 32, 32 ); 
+var sphereMaterial = new THREE. MeshPhongMaterial( {color: 0x0000ff } );
+var sphereMaterial2 = new THREE. MeshPhongMaterial( {color: 0xff0000 } );
+var sphere1 = new THREE.Mesh( sphereGeometry, sphereMaterial );
+var sphere2 = new THREE.Mesh( sphereGeometry, sphereMaterial2 );
+sphere1.position.set( 2.5, 0, -10 );
+sphere2.position.set( -2.5, 0, -10 );
+scene.add( sphere1 );
+scene.add( sphere2 );
+
+var sphereGeometry = new THREE.SphereGeometry( 2.6, 32, 32 ); 
+var sphereMaterial3 = new THREE. MeshPhongMaterial( {color: 0x0000ff,wireframe: true} );
+var sphereMaterial4 = new THREE. MeshPhongMaterial( {color: 0xff0000,wireframe: true} );
+var sphere3 = new THREE.Mesh( sphereGeometry, sphereMaterial3 );
+var sphere4 = new THREE.Mesh( sphereGeometry, sphereMaterial4 );
+sphere3.position.set( 2.5, 0, -10 );
+sphere4.position.set( -2.5, 0, -10 );
+scene.add( sphere3 );
+scene.add( sphere4 );
+
+//球
+var sphereGeometry = new THREE.SphereGeometry( 2.5, 32, 32 );
+var sphereMaterial5 = new THREE. MeshBasicMaterial( {color: 0x800080 } );
+var sphere5 = new THREE.Mesh( sphereGeometry, sphereMaterial5 );
+sphere5.position.set( 0, 0, -30);
+scene.add( sphere5 );
+    
+    // 平行光源1
+    var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+    directionalLight1.position.set(1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight1);
+    // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+    directionalLight2.position.set(-1, 1, 1);
+    // シーンに追加
+    scene.add(directionalLight2);
+  
+    // 初回実行
+    var update = function() {
+      requestAnimationFrame(update);
+  
+      sphere1.rotation.y += 0.03;
+      sphere2.rotation.y += 0.03;
+      icosahedron.rotation.y += 0.04;
+      sphere3.rotation.y += -0.03;
+      sphere4.rotation.y += -0.02;
+      icosahedron2.rotation.y += -0.04;
+      icosahedron3.rotation.y += 0.04;
+      sphere5.rotation.y += -0.03;
+      
+      sphere1.position.x +=-0.006;
+      sphere2.position.x +=0.006;
+      sphere3.position.x +=-0.006;
+      sphere4.position.x +=0.006;
+      
+      icosahedron.position.z +=0.04;
+      icosahedron2.position.z +=0.04;
+      icosahedron3.position.z +=0.04;
+      sphere1.position.z +=-0.01;
+      sphere2.position.z +=-0.01;
+      sphere3.position.z +=-0.01;
+      sphere4.position.z +=-0.01;
+      sphere5.position.z +=0.04;
+  
+      renderer.render(scene, camera);
+    };
+    update();
+  }
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
