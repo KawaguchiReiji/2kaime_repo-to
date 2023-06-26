@@ -104,20 +104,20 @@
           scene.add(sprite2);
         }
 
-        // 星をスプライトで作成
+        // 風船をスプライトで作成
         var textureLoader3 = new THREE.TextureLoader();  
-        var texture3 = textureLoader.load("img/star.png");
+        var texture3 = textureLoader.load("CEB2F9AF-02E6-4DC3-BDF6-87E04DCAEB16.png");
         const material3 = new THREE.SpriteMaterial({ map: texture3,});
 
-        // 星空を作成
-        for (let i = 0; i < 50; i++) {
+        // 風船を作成
+        for (let i = 0; i < 5; i++) {
           const sprite3 = new THREE.Sprite(material3);
           // ランダムな座標に配置
           sprite3.position.x = 4 * (Math.random() - 0.5);
-          sprite3.position.y = 0.5 * (Math.random()+7);
+          sprite3.position.y = 0.5 * (Math.random()+2);
           sprite3.position.z = 4 * (Math.random() - 0.5);
           // スケールを調整
-          sprite3.scale.set(0.2, 0.2, 0.2);
+          sprite3.scale.set(0.3, 0.3, 0.3);
 
           scene.add(sprite3);
         }
@@ -130,8 +130,8 @@
         const sprite4 = new THREE.Sprite(material4);
         sprite4.position.x = 0;
         sprite4.position.y = 2;
-        sprite4.position.z = 0;
-        sprite4.scale.set(2,2,2);
+        sprite4.position.z = -5;
+        sprite4.scale.set(3,3,3);
         scene.add(sprite4);
         
         update();
