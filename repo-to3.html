@@ -22,7 +22,7 @@
     renderer.setSize(width, height);
     document.body.appendChild(renderer.domElement);
     // 背景の色を設定
-        renderer.setClearColor(0xffffff);
+        renderer.setClearColor(0xE0ffff);
   
     // シーンを作成
     var scene = new THREE.Scene();
@@ -35,7 +35,7 @@
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshPhongMaterial({ color: 0xB0E0E6 });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set(0,-1,0); //位置を指定
+    box.position.set(0,1,0); //位置を指定
     scene.add(box);   // シーンに追加
     
     // 平行光源1
@@ -53,8 +53,8 @@
     var update = function() {
       requestAnimationFrame(update);
 
-      if(box.position.y != 1){
-        box.position.y += 0.03;
+      if(box.position.y != 3){
+        box.position.y += 0.02;
       }
   
       renderer.render(scene, camera);
