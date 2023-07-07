@@ -75,12 +75,6 @@ var sphereMaterial5 = new THREE. MeshBasicMaterial( {color: 0x800080 } );
 var sphere5 = new THREE.Mesh( sphereGeometry, sphereMaterial5 );
 sphere5.position.set( 0, 0, -30);
 scene.add( sphere5 );
-
-var geometry = new THREE.BoxGeometry(10, 10, 10);
-var material = new THREE.MeshPhongMaterial({ color: 0xE0FFFF });
-var box = new THREE.Mesh(geometry, material);
-box.position.set(0,25,0);
-scene.add(box);
     
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
