@@ -33,7 +33,7 @@
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshPhongMaterial({ color: 0xB0E0E6 });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set(0,1,0); //位置を指定
+    box.position.set(0,-1,0); //位置を指定
     scene.add(box);   // シーンに追加
     
     // 平行光源1
@@ -50,29 +50,10 @@
     // 初回実行
     var update = function() {
       requestAnimationFrame(update);
-  
-      sphere1.rotation.y += 0.03;
-      sphere2.rotation.y += 0.03;
-      icosahedron.rotation.y += 0.04;
-      sphere3.rotation.y += -0.03;
-      sphere4.rotation.y += -0.02;
-      icosahedron2.rotation.y += -0.04;
-      icosahedron3.rotation.y += 0.04;
-      sphere5.rotation.y += -0.03;
-      
-      sphere1.position.x +=-0.006;
-      sphere2.position.x +=0.006;
-      sphere3.position.x +=-0.006;
-      sphere4.position.x +=0.006;
-      
-      icosahedron.position.z +=0.04;
-      icosahedron2.position.z +=0.04;
-      icosahedron3.position.z +=0.04;
-      sphere1.position.z +=-0.01;
-      sphere2.position.z +=-0.01;
-      sphere3.position.z +=-0.01;
-      sphere4.position.z +=-0.01;
-      sphere5.position.z +=0.04;
+
+      if(box.position.y != 1){
+        box.position.y += 0.03;
+      }
   
       renderer.render(scene, camera);
     };
