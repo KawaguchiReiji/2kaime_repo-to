@@ -9,7 +9,7 @@
       }
     </script>
     <script type="module">
-      import * as THREE from "three";
+      //import * as THREE from "three";
 
       // サイズを指定
       const width = 960;
@@ -28,6 +28,8 @@
 
       // カメラを作成
       const camera = new THREE.PerspectiveCamera(45, width / height);
+      // カメラの初期座標を設定
+        camera.position.set(1000, 0, 1000);
 
       // 星屑を作成します (カメラの動きをわかりやすくするため)
       createStarField();
@@ -70,15 +72,15 @@
 
       // 毎フレーム時に実行されるループイベントです
       function tick() {
-        rot += 1;
+        //rot += 1;
 
         // ラジアンに変換する
-        const radian = (rot * Math.PI) / 180;
+        //const radian = (rot * Math.PI) / 180;
         // 角度に応じてカメラの位置を設定
-        camera.position.x = 1000 * Math.sin(radian);
-        camera.position.z = 1000 * Math.cos(radian);
+       // camera.position.x = 1000 * Math.sin(radian);
+        //camera.position.z = 1000 * Math.cos(radian);
         // 原点方向を見つめる
-        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        //camera.lookAt(new THREE.Vector3(0, 0, 0));
 
         // レンダリング
         renderer.render(scene, camera);
