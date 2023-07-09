@@ -104,23 +104,15 @@
           scene.add(sprite2);
         }
 
-        // 風船をスプライトで作成
-        var textureLoader3 = new THREE.TextureLoader();  
-        var texture3 = textureLoader.load("CEB2F9AF-02E6-4DC3-BDF6-87E04DCAEB16.png");
-        const material3 = new THREE.SpriteMaterial({ map: texture3,});
-
-        // 風船を作成
-        for (let i = 0; i < 7; i++) {
-          const sprite3 = new THREE.Sprite(material3);
-          // ランダムな座標に配置
-          sprite3.position.x = 4 * (Math.random() - 0.5);
-          sprite3.position.y = 0.5 * (Math.random()+3);
-          sprite3.position.z = 4 * (Math.random() - 0.5);
-          // スケールを調整
-          sprite3.scale.set(0.3, 0.3, 0.3);
-
-          scene.add(sprite3);
-        }
+        //箱の作成
+        const geometrybox = new THREE.BoxGeometry(80, 80, 80 );
+        const materialbox = new THREE.MeshLambertMaterial( {
+                          color: 0x3edbf0,
+                          opacity: 0.5,
+                          transparent: true,
+                          side: THREE.DoubleSide,});
+        const cube = new THREE.Mesh( geometrybox, materialbox );
+        scene.add(cube);
 
         // 月をスプライトで作成 
         var textureLoader4 = new THREE.TextureLoader();
