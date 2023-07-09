@@ -22,7 +22,7 @@
     renderer.setSize(width, height);
     document.body.appendChild(renderer.domElement);
     // 背景の色を設定
-        renderer.setClearColor(0xE0FFFF);
+        renderer.setClearColor(0xE00000);
   
     // シーンを作成
     var scene = new THREE.Scene();
@@ -35,8 +35,8 @@
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = new THREE.MeshPhongMaterial({ color: 0xE0FFFF });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set(0,0,0); //位置を指定
-    scene.add(box);   // シーンに追加
+    box.position.set(0,0,0);
+    scene.add(box);
     
     // 平行光源1
     var directionalLight1 = new THREE.DirectionalLight(0xffffff);
