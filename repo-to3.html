@@ -105,10 +105,10 @@
         }
 
         //箱の作成
-        const geometrybox = new THREE.BoxGeometry(5, 5, 5 );
+        const geometrybox = new THREE.BoxGeometry(1, 1, 1 );
         const materialbox = new THREE.MeshLambertMaterial( {
                           color: 0x3edbf0,
-                          opacity: 0.5,
+                          opacity: 0.8,
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
