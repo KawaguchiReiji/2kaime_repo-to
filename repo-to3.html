@@ -105,13 +105,14 @@
         }
 
         //箱の作成
-        const geometrybox = new THREE.BoxGeometry(1, 1, 1 );
+        const geometrybox = new THREE.BoxGeometry(0.5, 0.5, 0.5 );
         const materialbox = new THREE.MeshLambertMaterial( {
                           color: 0x3edbf0,
-                          opacity: 0.8,
+                          opacity: 0.5,
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
+        cube.position.y = 0.5;
         scene.add(cube);
 
         // 月をスプライトで作成 
