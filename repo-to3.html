@@ -112,10 +112,6 @@
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
-        //cube.position.set(0,-0.5,0);
-        /*if(cube.position.y >= 0.5){
-          cube.position.y = 0.5;
-        }*/
         scene.add(cube);
         
 
@@ -151,7 +147,10 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-          cube.position.y += -0.1;
+          cube.position.y += 0.05;
+          if(cube.position.y == 0.5){
+            cube.position.y = 0.5;
+          }
         }
       }
     </script>
