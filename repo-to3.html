@@ -104,7 +104,7 @@
           scene.add(sprite2);
         }
 
-        //箱の作成
+        //結界の作成
         const geometrybox = new THREE.BoxGeometry(1, 1, 1 );
         const materialbox = new THREE.MeshLambertMaterial( {
                           color: 0x3edbf0,
@@ -115,6 +115,18 @@
         cube.position.y = 0.5;
         scene.add(cube);
 
+        //地面の作成
+        var geometry = new THREE.PlaneGeometry();
+        var texture5 = textureLoader.load("3E1B1202-A93B-47A5-B9AC-80136B20C0ED.png");
+        const material5 = new THREE.SpriteMaterial({ map: texture5,});
+
+        const sprite4 = new THREE.Sprite(material4);
+        sprite4.position.x = 0;
+        sprite4.position.y = 3;
+        sprite4.position.z = -5;
+        sprite4.scale.set(0.5, 0.5, 0.5);
+        scene.add( plane );
+        
         // 月をスプライトで作成 
         var textureLoader4 = new THREE.TextureLoader();
         var texture4 = textureLoader.load("3E1B1202-A93B-47A5-B9AC-80136B20C0ED.png");
