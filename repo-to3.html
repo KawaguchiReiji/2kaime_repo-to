@@ -148,9 +148,10 @@
           renderer.render(scene, camera);
           requestAnimationFrame(update);
           
-          if(cube.position.y != 0.5){
-            cube.position.y += 0.05;
-          }
+          if(cube.position.y <= 0.5){
+            cube.position.y += 0.01;
+          }else{
+            cube.position.y = 0.5;
         }
       }
     </script>
