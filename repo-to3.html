@@ -118,12 +118,13 @@
         //地面の作成
         var geometry = new THREE.PlaneGeometry();
         var texture5 = textureLoader.load("turf_ground.jpg");
-        //const material5 = new THREE.SpriteMaterial({ map: texture5,});
+        const material5 = new THREE.SpriteMaterial({ map: texture5,});
 
-        const plane = new THREE.Sprite(texture5);
+        const plane = new THREE.Sprite(material5);
         plane.position.x = 0;
         plane.position.y = 0;
         plane.position.z = 0;
+        plane.rotation.z = 1;
         plane.scale.set(3, 3, 3);
         scene.add( plane );
         
