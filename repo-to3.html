@@ -59,13 +59,7 @@
         for (let i = 0; i < 10; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
-          if(i%2==0){
-            sprite.position.x = 4 * (Math.random() + 0.5);
-            count++;
-          }else{
-            sprite.position.x = -4 * (Math.random() + 0.5);
-            count++;
-          }
+          sprite.position.x = (Math.random() + 0.5);
           sprite.position.y = 0.5;
           sprite.position.z = 4 * (Math.random() - 0.5);
           // スケールを調整
