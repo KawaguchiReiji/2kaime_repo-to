@@ -58,11 +58,17 @@
         // 森を作成
         for (let i = 0; i < 10; i++) {
           const sprite = new THREE.Sprite(material);
+          int count = 0;
           // ランダムな座標に配置
-          sprite.position.x = 5 * (Math.random() + 0.5);
-          sprite.position.x = -5 * (Math.random() + 0.5);
+          if(count%2==0){
+            sprite.position.x = 4 * (Math.random() + 0.5);
+            count++;
+          }else{
+            sprite.position.x = -4 * (Math.random() + 0.5);
+            count++;
+          }
           sprite.position.y = 0.5;
-          sprite.position.z = 5 * (Math.random() - 0.5);
+          sprite.position.z = 4 * (Math.random() - 0.5);
           // スケールを調整
           sprite.scale.set(1, 1, 1);
 
