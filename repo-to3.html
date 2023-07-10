@@ -112,11 +112,14 @@
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
-        cube.position.y = 0.5;
+        cube.position.y += 0.1;
+        if(cube.position.y >= 0.5){
+          cube.position.y = 0.5;
+        }
         scene.add(cube);
 
         //地面の作成
-        var textureLoader5 = new THREE.TextureLoader();
+        /*var textureLoader5 = new THREE.TextureLoader();
         var texture5 = textureLoader.load("turf_ground.jpg");
         const material5 = new THREE.SpriteMaterial({ map: texture5,});
 
@@ -126,7 +129,7 @@
         plane.position.z = 0;
         plane.rotation.x = Math.PI / -2;
         plane.scale.set(3, 3, 3);
-        scene.add( plane );
+        scene.add( plane );*/
         
         // 月をスプライトで作成 
         var textureLoader4 = new THREE.TextureLoader();
