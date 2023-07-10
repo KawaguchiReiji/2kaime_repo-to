@@ -112,11 +112,12 @@
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
-        cube.position.y += 0.1;
+        
         /*if(cube.position.y >= 0.5){
           cube.position.y = 0.5;
         }*/
         scene.add(cube);
+        cube.position.y += 0.1;
 
         //地面の作成
         /*var textureLoader5 = new THREE.TextureLoader();
