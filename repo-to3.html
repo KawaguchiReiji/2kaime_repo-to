@@ -126,14 +126,14 @@
         scene.add(cube2);
 
         //結界3の作成
-        const geometrybox3 = new THREE.BoxGeometry(2, 2, 2 );
+        const geometrybox3 = new THREE.BoxGeometry(1.5, 1.5, 1.5);
         const materialbox3 = new THREE.MeshLambertMaterial( {
                           color: 0x3edbf0,
                           opacity: 0.5,
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube3 = new THREE.Mesh( geometrybox3, materialbox3 );
-        cube3.position.set(-1.5,-1.5,1.5)
+        cube3.position.set(-2,-1.5,1.5)
         scene.add(cube3);
 
         //地面の作成
