@@ -119,8 +119,8 @@
         var textureLoader5 = new THREE.TextureLoader();
         var texture5 = textureLoader.load("turf_ground.jpg");
         
-        var planegeometry = new THREE.PlaneGeometry( 5, 20, 32 );
-        var planematerial = new THREE.MeshBasicMaterial( {color: 0xFF0000, side: THREE.DoubleSide} );
+        var planegeometry = new THREE.PlaneGeometry();
+        var planematerial = new THREE.MeshBasicMaterial();
         planematerial.map = texture5;
         var plane = new THREE.Mesh( planegeometry, planematerial );
         
@@ -128,6 +128,7 @@
         plane.position.y = 0;
         plane.position.z = 0;
         plane.scale.set(3, 3, 3);
+        plane.position.x = Math.PI / 2;
         scene.add( plane );
         
         // 月をスプライトで作成 
