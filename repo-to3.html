@@ -150,8 +150,10 @@
           requestAnimationFrame(update);
 
           cube.position.y += num;
-          if(cube.position.y >= 1 || cube.position.y <= -1.5){
-            num = -num;
+          if(cube.position.y >= 0.5){
+            num = -2;
+          }else if(cube.position.y <= -1.5){
+            num = 0.01
           }
         }
 
