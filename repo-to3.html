@@ -59,7 +59,7 @@
         for (let i = 0; i < 20; i++) {
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
-          sprite.position.x = (Math.random() + 0.5);
+          sprite.position.x = 2 * (Math.random() + 0.5);
           sprite.position.y = 0.5;
           sprite.position.z = 7 * (Math.random() - 0.5);
           // スケールを調整
@@ -79,7 +79,7 @@
           // ランダムな座標に配置
           sprite1.position.x = 7 * -(Math.random() - 0.5);
           sprite1.position.y = 0.5;
-          sprite1.position.z = -(Math.random() + 0.5);
+          sprite1.position.z = 2 * -(Math.random() + 0.5);
           // スケールを調整
           sprite1.scale.set(1, 1, 1);
 
@@ -95,7 +95,7 @@
         for (let i = 0; i < 20; i++) {
           const sprite2 = new THREE.Sprite(material2);
           // ランダムな座標に配置
-          sprite2.position.x = -(Math.random() + 0.5);
+          sprite2.position.x = 2 * -(Math.random() + 0.5);
           sprite2.position.y = 0.5;
           sprite2.position.z = 7 * -(Math.random() - 0.5);
           // スケールを調整
