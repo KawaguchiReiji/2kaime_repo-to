@@ -122,7 +122,7 @@
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube2 = new THREE.Mesh( geometrybox2, materialbox2 );
-        cube2.position.set(4,5,-6)
+        cube2.position.set(4,-1,-6)
         scene.add(cube2);
 
         //地面の作成
@@ -154,6 +154,7 @@
         scene.add(sprite4)
 
         let num =0.01;
+        let num2 =0.01;
         
         update();
         
@@ -163,11 +164,18 @@
           requestAnimationFrame(update);
 
           cube.position.y += num;
-          cube2.position.y += num;
           if(cube.position.y > 0.5){
             num = 0;
           }else if(cube.position.y <= -1){
             num = 0.01
+          }
+
+          cube2.position.y += num2;
+          if(cube2.position.y > 2){
+            num2 = 0;
+            cube2.rotation.x += 0.5;
+          }else if(cube2.position.y <= -1){
+            num2 = 0.01
           }
         }
 
