@@ -118,12 +118,23 @@
         const geometrybox2 = new THREE.BoxGeometry(2, 2, 2 );
         const materialbox2 = new THREE.MeshLambertMaterial( {
                           color: 0x3edbf0,
-                          opacity: 0.1,
+                          opacity: 0.5,
                           transparent: true,
                           side: THREE.DoubleSide,});
         const cube2 = new THREE.Mesh( geometrybox2, materialbox2 );
         cube2.position.set(4,-1,-6)
         scene.add(cube2);
+
+        //結界3の作成
+        const geometrybox3 = new THREE.BoxGeometry(2, 2, 2 );
+        const materialbox3 = new THREE.MeshLambertMaterial( {
+                          color: 0x3edbf0,
+                          opacity: 0.5,
+                          transparent: true,
+                          side: THREE.DoubleSide,});
+        const cube3 = new THREE.Mesh( geometrybox3, materialbox3 );
+        cube3.position.set(-4,-1,6)
+        scene.add(cube3);
 
         //地面の作成
         var textureLoader5 = new THREE.TextureLoader();
@@ -155,6 +166,7 @@
 
         let num =0.01;
         let num2 =0.01;
+        let num3 =0.01;
         
         update();
         
@@ -177,6 +189,15 @@
             cube2.rotation.y += 0.5;
           }else if(cube2.position.y <= -1){
             num2 = 0.01
+          }
+
+          cube3.position.y += num3;
+          cube3.rotation.x += 0.05;
+          cube3.rotation.y += 0.05;
+          if(cube3.position.y > 1.5){
+            num3 = 0;
+          }else if(cube3.position.y <= -1){
+            num3 = 0.01
           }
         }
 
