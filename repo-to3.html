@@ -28,7 +28,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(1, 3, 8);
+        camera.position.set(0, 3, 8);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -178,7 +178,7 @@
           cube.position.y += num;
           if(cube.position.y > 0.5){
             num = 0;
-            cube.rotation.x += 0.02;
+            cube.rotation.y += 0.01;
           }else if(cube.position.y <= -1){
             num = 0.01
           }
