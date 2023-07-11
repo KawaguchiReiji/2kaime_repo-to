@@ -113,7 +113,17 @@
                           side: THREE.DoubleSide,});
         const cube = new THREE.Mesh( geometrybox, materialbox );
         scene.add(cube);
-        
+
+        //結界2の作成
+        const geometrybox2 = new THREE.BoxGeometry(2, 2, 2 );
+        const materialbox2 = new THREE.MeshLambertMaterial( {
+                          color: 0x3edbf0,
+                          opacity: 0.8,
+                          transparent: true,
+                          side: THREE.DoubleSide,});
+        const cube2 = new THREE.Mesh( geometrybox2, materialbox2 );
+        cube2.position.set(4,5,-6)
+        scene.add(cube2);
 
         //地面の作成
         var textureLoader5 = new THREE.TextureLoader();
@@ -153,6 +163,7 @@
           requestAnimationFrame(update);
 
           cube.position.y += num;
+          cube2.position.y += num;
           if(cube.position.y > 0.5){
             num = 0;
           }else if(cube.position.y <= -1){
